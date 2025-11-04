@@ -9,7 +9,19 @@ import projects from '../data/project.json'
         <div class="card-items">
             <div class="card-item" v-for="(proj, idx) in projects" :key="idx">
                 <div class="card-body">
-                    <p class="title">{{ proj.title }}</p>
+                    <p class="title">
+                        {{ proj.title }}
+                        <a
+                        v-if="proj.links"
+                        :href="proj.links"
+                        class="proj-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        @click.stop
+                        >
+                        <i class="mdi mdi-open-in-new"></i>
+                      </a>
+                    </p>
                     <p class="subtitle">{{ proj.keywords.join('∙') }} | {{ proj.dates }}</p>
                     <div class="content">
                     <ul>
@@ -51,14 +63,14 @@ import projects from '../data/project.json'
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
-.pub-link {
+.proj-link {
   display: inline-block;
   color: #999;
   padding-left: 4px;
   font-size: 1.2rem;
 }
-.card-item:hover .pub-link,
-.card-item:focus-within .pub-link {
+.card-item:hover .proj-link,
+.card-item:focus-within .proj-link {
   color: #1976d2;
 }
 .card-body .title {
