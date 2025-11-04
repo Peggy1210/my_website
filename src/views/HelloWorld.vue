@@ -6,6 +6,7 @@ import Education from '../components/Education.vue'
 import Experience from '../components/Experience.vue'
 import SideProject from '../components/SideProject.vue'
 import Updates from '../components/Updates.vue'
+import Fab from '../components/Fab.vue'
 </script>
 
 <template>
@@ -17,6 +18,7 @@ import Updates from '../components/Updates.vue'
     <Publication />
     <Project />
     <SideProject />
+    <Fab />
   </div>
 </template>
 
