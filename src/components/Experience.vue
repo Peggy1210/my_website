@@ -67,6 +67,13 @@ import experience from '../data/experience.json'
   padding: 0 24px;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  transition: transform 220ms cubic-bezier(.2,.8,.2,1), box-shadow 220ms;
+}
+.timeline-card-body:hover,
+.timeline-card-body:focus,
+.timeline-card-body:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 .timeline-card-body .title {
   font-size: 1.2rem;
