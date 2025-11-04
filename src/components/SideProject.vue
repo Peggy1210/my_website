@@ -1,30 +1,103 @@
 <script setup>
-import { computed } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import sideProjectData from '../data/side-project.json'
+
+// Resolve image urls at build time
 const sideProjects = computed(() => {
   return sideProjectData.map(s => ({
     ...s,
     imageUrl: new URL(`../assets/side_project_img/${s.image}`, import.meta.url).href
   }))
 })
+
+// Responsive column-based layout (left-to-right ordering).
+// We split items into N columns (round-robin) so visual order is
+// left-to-right then top-to-bottom while allowing variable heights.
+const containerRef = ref(null)
+const columnsCount = ref(3)
+
+function calcCols(width) {
+  if (width <= 480) return 1
+  if (width <= 768) return 2
+  return 3
+}
+
+function updateColumns() {
+  const el = containerRef.value
+  if (!el) return
+  const w = el.clientWidth || window.innerWidth
+  columnsCount.value = calcCols(w)
+}
+
+let ro = null
+onMounted(() => {
+  updateColumns()
+  if ('ResizeObserver' in window) {
+    ro = new ResizeObserver(() => updateColumns())
+    if (containerRef.value) ro.observe(containerRef.value)
+  } else {
+    // Fallback
+    window.addEventListener('resize', updateColumns)
+  }
+})
+onBeforeUnmount(() => {
+  if (ro && containerRef.value) ro.unobserve(containerRef.value)
+  window.removeEventListener('resize', updateColumns)
+})
+
+const columns = computed(() => {
+  const cols = Array.from({ length: Math.max(1, columnsCount.value) }, () => [])
+  sideProjects.value.forEach((item, i) => {
+    const idx = i % cols.length
+    cols[idx].push(item)
+  })
+  return cols
+})
+
+function openProject(url) {
+  if (!url) return
+  window.open(url, '_blank', 'noopener')
+}
 </script>
 
 <template>
 <div class="section" id="side-section">
     <h2>More from me...</h2>
-    <div class="small-card-container small">
-    <div class="small-card-items">
-        <div class="small-card-item" v-for="(proj, idx) in sideProjects" :key="idx">
-        <img class="small-card-image" :src="proj.imageUrl" :alt="`Project ${idx}`" />
-        <div class="small-card-body">
-            <p class="title">{{ proj.title }}</p>
-            <div class="content" v-for="(p, i) in proj.points" :key="i">
-            {{ p }}
+      <div class="small-card-container">
+        <div class="small-card-items" ref="containerRef">
+          <!-- render N columns left-to-right -->
+          <div class="small-card-column" v-for="(col, cidx) in columns" :key="cidx">
+            <div
+              class="small-card-item"
+              v-for="(proj, idx) in col"
+              :key="`${cidx}-${idx}`"
+              tabindex="0"
+              role="group"
+              @keydown.enter.prevent="openProject(proj.url)"
+            >
+              <img class="small-card-image" :src="proj.imageUrl" :alt="proj.title || `Project ${idx}`" />
+              <div class="small-card-body">
+                <p class="title">
+                    {{ proj.title }}
+                    <a
+                        v-if="proj.links"
+                        :href="proj.links"
+                        class="proj-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        @click.stop
+                    >
+                        <i class="mdi mdi-open-in-new"></i>
+                    </a>
+                </p>
+                <div class="content" v-for="(p, i) in proj.points" :key="i">
+                    {{ p }}
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-        </div>
-    </div>
-    </div>
+      </div>
 </div>
 </template>
 
@@ -34,19 +107,26 @@ const sideProjects = computed(() => {
 }
 
 .small-card-items {
-  column-count: 3;
-  column-gap: 12px;
+  display: flex;
+  gap: 12px;
   margin-top: 16px;
+  align-items: start;
+}
+.small-card-column {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 .small-card-item {
-  display: inline-block; /* required for column layout */
   width: 100%;
-  margin: 0 0 12px 0; /* vertical gap between items */
   box-sizing: border-box;
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid #ccc;
   background: #fff;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  position: relative;
+  transition: transform 220ms cubic-bezier(.2,.8,.2,1), box-shadow 220ms;
 }
 
 /* Responsive column counts */
@@ -73,10 +153,30 @@ const sideProjects = computed(() => {
 
 .small-card-image {
   width: 100%;
-  height: 100%; /* fixed display height */
+  height: 180px; /* fixed display height */
   object-fit: cover; /* crop the image to fill the box */
   display: block;
 }
+.small-card-item:hover,
+.small-card-item:focus,
+.small-card-item:focus-within {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* Floating 'Visit' link (initially hidden) */
+.proj-link {
+  display: inline-block;
+  color: #999;
+  padding-left: 4px;
+  font-size: 1.2rem;
+}
+
+.small-card-item:hover .proj-link,
+.small-card-item:focus-within .proj-link {
+  color: #1976d2;
+}
+
 .small-card-body .title {
   font-size: 1.2rem;
   font-weight: 600;
