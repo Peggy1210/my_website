@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "echo \"VITE_BUILD_TIME=$(date -u '+%Y-%m-%dT%H:%M:%SZ')\" > .env.local && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "dayjs": "^1.11.19",
     "vue": "^3.5.13"
   },
   "devDependencies": {

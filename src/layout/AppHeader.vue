@@ -1,9 +1,18 @@
+<script setup>
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+import utc from 'dayjs/plugin/utc'
+dayjs.extend(relativeTime)
+dayjs.extend(utc)
+const VITE_BUILD_TIME = import.meta.env.VITE_BUILD_TIME
+</script>
+
 <template>
     <header class="site-header">
         <p class="title">Peggy's Workspace</p>
         <div class="spanner"></div>
         <div class="header-content">
-            <div class="status">Last Updates: 2025-11-03 ∙ Number of Visits: 123</div>
+            <div class="status">Last update: {{ dayjs.utc(VITE_BUILD_TIME).local().fromNow() }}</div>
         </div>
     </header>
 </template>
