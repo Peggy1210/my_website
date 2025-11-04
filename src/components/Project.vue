@@ -5,15 +5,17 @@ import projects from '../data/project.json'
 <template>
 <div class="section">
     <h2>Projects</h2>
-    <div class="card-items">
-        <div class="card-item" v-for="(proj, idx) in projects" :key="idx">
-            <div class="card-body">
-                <p class="title">{{ proj.title }}</p>
-                <p class="subtitle">{{ proj.keywords.join('∙') }} | {{ proj.dates }}</p>
-                <div class="content">
-                  <ul>
-                    <li v-for="(point, idx) in proj.points" :key="idx">{{ point }}</li>
-                  </ul>
+    <div class="card-container">
+        <div class="card-items">
+            <div class="card-item" v-for="(proj, idx) in projects" :key="idx">
+                <div class="card-body">
+                    <p class="title">{{ proj.title }}</p>
+                    <p class="subtitle">{{ proj.keywords.join('∙') }} | {{ proj.dates }}</p>
+                    <div class="content">
+                    <ul>
+                        <li v-for="(point, idx) in proj.points" :key="idx">{{ point }}</li>
+                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -24,6 +26,9 @@ import projects from '../data/project.json'
 <style scoped>
 .section {
   margin-top: 40px;
+}
+.card-container {
+  position: relative;
 }
 .card-items {
   display: block;

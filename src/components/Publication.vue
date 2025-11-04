@@ -5,15 +5,17 @@ import publications from '../data/publication.json'
 <template>
 <div class="section">
     <h2>Publications</h2>
-    <div class="card-items">
-        <div class="card-item" v-for="(pub, idx) in publications" :key="idx">
-            <div class="card-body">
-                <p class="title">{{ pub.title }}</p>
-                <p class="subtitle">{{ pub.publisher }} | {{ pub.dates }}</p>
-                <div class="content">
-                  <ul>
-                    <li v-for="(point, idx) in pub.points" :key="idx">{{ point }}</li>
-                  </ul>
+    <div class="card-container">
+        <div class="card-items">
+            <div class="card-item" v-for="(pub, idx) in publications" :key="idx">
+                <div class="card-body">
+                    <p class="title">{{ pub.title }}</p>
+                    <p class="subtitle">{{ pub.publisher }} | {{ pub.dates }}</p>
+                    <div class="content">
+                      <ul>
+                        <li v-for="(point, idx) in pub.points" :key="idx">{{ point }}</li>
+                      </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -24,6 +26,9 @@ import publications from '../data/publication.json'
 <style scoped>
 .section {
   margin-top: 40px;
+}
+.card-container {
+  position: relative;
 }
 .card-items {
   display: block;

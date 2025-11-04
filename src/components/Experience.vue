@@ -5,15 +5,19 @@ import experience from '../data/experience.json'
 <template>
 <div class="section">
     <h2>Experience</h2>
-    <div class="card-items">
-        <div class="card-item" v-for="(exp, idx) in experience" :key="idx">
-            <div class="card-body">
-                <p class="title">{{ exp.title }}</p>
-                <p class="subtitle">{{ exp.company }} | {{ exp.dates }}</p>
-                <div class="content">
-                  <ul>
-                    <li v-for="(point, idx) in exp.points" :key="idx">{{ point }}</li>
-                  </ul>
+    <div class="timeline-container">
+        <div class="timeline-line" aria-hidden="true"></div>
+        <div class="timeline-items">
+            <div class="timeline-item" v-for="(exp, idx) in experience" :key="idx">
+                <div class="timeline-marker" aria-hidden="true"></div>
+                <div class="timeline-card-body">
+                    <p class="title">{{ exp.title }}</p>
+                    <p class="subtitle">{{ exp.company }} | {{ exp.dates }}</p>
+                    <div class="content">
+                      <ul>
+                        <li v-for="(point, idx) in exp.points" :key="idx">{{ point }}</li>
+                      </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -25,32 +29,57 @@ import experience from '../data/experience.json'
 .section {
   margin-top: 40px;
 }
-.card-items {
+.timeline-container {
+  position: relative;
+  padding-left: 28px;
+}
+.timeline-line {
+  position: absolute;
+  left: 28px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  margin-right: 48px;
+  background: #e8e8e8;
+}
+.timeline-items {
   display: block;
 }
-.card-item {
+.timeline-item {
   position: relative;
   margin-bottom: 22px;
+  padding-left: 32px;
 }
-.card-body {
+.timeline-marker {
+  position: absolute;
+  left: -10px;
+  top: 28px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #1976d2;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 6px rgba(25,118,210,0.06);
+}
+.timeline-card-body {
   background: #fff;
   border: 1px solid #ececec;
   padding: 0 24px;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.03);
 }
-.card-body .title {
+.timeline-card-body .title {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0px;
 }
-.card-body .subtitle {
+.timeline-card-body .subtitle {
   font-size: 1rem;
   color: #888;
   margin-top: 4px;
   margin-bottom: 4px;
 }
-.card-body .content {
+.timeline-card-body .content {
     margin-bottom: 24px
 }
 </style>
