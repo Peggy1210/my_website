@@ -1,18 +1,18 @@
 <script setup>
-import publications from '../data/publication.json'
+import projects from '../data/project.json'
 </script>
 
 <template>
 <div class="section">
-    <h2>Publications</h2>
+    <h2>Projects</h2>
     <div class="card-items">
-        <div class="card-item" v-for="(pub, idx) in publications" :key="idx">
+        <div class="card-item" v-for="(proj, idx) in projects" :key="idx">
             <div class="card-body">
-                <p class="title">{{ pub.title }}</p>
-                <p class="subtitle">{{ pub.publisher }} | {{ pub.dates }}</p>
+                <p class="title">{{ proj.title }}</p>
+                <p class="subtitle">{{ proj.keywords.join('∙') }} | {{ proj.dates }}</p>
                 <div class="content">
                   <ul>
-                    <li v-for="(point, idx) in pub.points" :key="idx">{{ point }}</li>
+                    <li v-for="(point, idx) in proj.points" :key="idx">{{ point }}</li>
                   </ul>
                 </div>
             </div>
@@ -51,6 +51,6 @@ import publications from '../data/publication.json'
   margin-bottom: 4px;
 }
 .card-body .content {
-  margin-bottom: 24px;
+    margin-bottom: 24px
 }
 </style>

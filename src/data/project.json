@@ -1,0 +1,26 @@
+[
+    {
+        "title": "SAIT, Study Abroad Information for Taiwanese Students",
+        "keywords": ["Vue", "Git", "Python", "Machine Learning"],
+        "dates": "Fall 2024",
+        "points": [
+            "Built a similarity-based admission analysis tool to recommend relevant study abroad cases using weighted embedding."
+        ]
+    },
+    {
+        "title": "GUI-ASFormer, Detecting Keyframes in Graphical User Interface Videos",
+        "keywords": ["Python", "Machine Learning", "Deep Learning", "Transformers", "Computer Vision"],
+        "dates": "Winter 2025",
+        "points": [
+            "Improved ASFormer for GUI action segmentation with a two stream encoder, high-resolution embeddings, frame differencing, and multiscale temporal convolutions, boosting F1@50 by +7.1 and edit distance by +6.8"
+        ]
+    },
+    {
+        "title": "Job Postings Searching System",
+        "keywords": ["Python", "Information Retrieval", "Machine Learning", "Natural Language Processing"],
+        "dates": "Fall 2024",
+        "points": [
+            "Implemented a system that used user profiles as queries to match relevant job postings, applying NLP techniques such as text classification, semantic similarity, and ranking models to achieve a 67% improvement in NDCG over baseline."
+        ]
+    }
+]
