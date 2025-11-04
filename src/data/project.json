@@ -31,7 +31,7 @@
     },
     {
         "title": "NanoCircDx - IGEM Competition Gold Award Project",
-        "keywords": ["Python", "Information Retrieval", "Machine Learning", "Natural Language Processing"],
+        "keywords": ["Python", "Classifier", "Machine Learning", "Bioinformatics", "Flutter"],
         "dates": "Fall 2023",
         "points": [
             "Vice Captain and Dry Lab Member of team NTHU_Taiwan.",
@@ -39,15 +39,5 @@
             "Devised ML models for automatic kit detection and result recognition with accuracy over 0.8 and embedded the model into a mobile app using Flutter."
         ],
         "links": "https://2023.igem.wiki/nthu-taiwan/home"
-    },
-    {
-        "title": "Prediction of In-Hospital Mortality of Patients with Liver Cirrhosis",
-        "keywords": ["Python", "Information Retrieval", "Machine Learning", "Natural Language Processing"],
-        "dates": "Fall 2023",
-        "points": [
-            "Incorporated a machine learning model for the classification of patients with liver cirrhosis and acute kidney injury based on their in-hospital mortality on the MIMIC-IV database using Google Cloud Platform.",
-            "Performed data analysis for better model accuracy on patients with different stages of acute kidney injury."
-        ],
-        "links": "https://github.com/Data-Science-for-Digital-Health-Group4/FinalProject"
     }
 ]

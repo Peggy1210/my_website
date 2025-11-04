@@ -22,7 +22,7 @@ import projects from '../data/project.json'
                         <i class="mdi mdi-open-in-new"></i>
                       </a>
                     </p>
-                    <p class="subtitle">{{ proj.keywords.join('∙') }} | {{ proj.dates }}</p>
+                    <p class="subtitle">{{ proj.keywords.slice(0, 5).join('∙') }} | {{ proj.dates }}</p>
                     <div class="content">
                     <ul>
                         <li v-for="(point, idx) in proj.points" :key="idx">{{ point }}</li>
