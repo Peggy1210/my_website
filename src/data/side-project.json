@@ -1,0 +1,38 @@
+[
+    {
+        "title": "YOLO Toolkit",
+        "image": "default.png",
+        "keywords": ["Vue", "Git", "Python", "Machine Learning"],
+        "points": [
+            "Built a similarity-based admission analysis tool to recommend relevant study abroad cases using weighted embedding."
+        ],
+        "links": ""
+    },
+    {
+        "title": "OCR App",
+        "image": "default.png",
+        "keywords": ["Python", "Machine Learning", "Deep Learning", "Transformers", "Computer Vision"],
+        "points": [
+            "Improved ASFormer for GUI action segmentation with a two stream encoder, high-resolution embeddings, frame differencing, and multiscale temporal convolutions, boosting F1@50 by +7.1 and edit distance by +6.8"
+        ],
+        "links": ""
+    },
+    {
+        "title": "Chicken Run",
+        "image": "default.png",
+        "keywords": ["Python", "Information Retrieval", "Machine Learning", "Natural Language Processing"],
+        "points": [
+            "Implemented a system that used user profiles as queries to match relevant job postings, applying NLP techniques such as text classification, semantic similarity, and ranking models to achieve a 67% improvement in NDCG over baseline."
+        ],
+        "links": "https://github.com/Peggy1210/Chicken-Run"
+    },
+    {
+        "title": "Chicken Run 2",
+        "image": "default.png",
+        "keywords": ["Python", "Information Retrieval", "Machine Learning", "Natural Language Processing"],
+        "points": [
+            "Implemented a system that used user profiles as queries to match relevant job postings, applying NLP techniques such as text classification, semantic similarity, and ranking models to achieve a 67% improvement in NDCG over baseline."
+        ],
+        "links": "https://github.com/Peggy1210/Chicken-Run-2"
+    }
+]

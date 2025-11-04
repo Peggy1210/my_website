@@ -4,6 +4,7 @@ import Publication from '../components/Publication.vue'
 import Project from '../components/Project.vue'
 import Education from '../components/Education.vue'
 import Experience from '../components/Experience.vue'
+import SideProject from '../components/SideProject.vue'
 </script>
 
 <template>
@@ -13,6 +14,7 @@ import Experience from '../components/Experience.vue'
     <Experience />
     <Publication />
     <Project />
+    <SideProject />
   </div>
 </template>
 
