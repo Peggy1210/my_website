@@ -10,41 +10,42 @@ function openPublication(url) {
 
 <template>
 <div class="section">
-    <h2>Publications</h2>
-    <div class="card-container">
-        <div class="card-items">
-            <div
-              class="card-item"
-              v-for="(pub, idx) in publications"
-              :key="idx"
-              tabindex="0"
-              role="group"
-              @keydown.enter.prevent="openPublication(pub.url)"
-            >
-                <div class="card-body">
-                    <p class="title">
-                      {{ pub.title }}
-                      <a
-                        v-if="pub.doi"
-                        :href="pub.doi"
-                        class="pub-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        @click.stop
-                        >
-                        <i class="mdi mdi-open-in-new"></i>
-                      </a>
-                    </p>
-                    <p class="subtitle">{{ pub.publisher }} | {{ pub.dates }}</p>
-                    <div class="content">
-                      <ul>
-                        <li v-for="(point, pidx) in pub.points" :key="pidx">{{ point }}</li>
-                      </ul>
-                    </div>
-                </div>
-            </div>
+  <h2>Publications</h2>
+  <div class="card-container">
+    <div class="card-items">
+      <div
+        class="card-item"
+        v-for="(pub, idx) in publications"
+        :key="idx"
+        tabindex="0"
+        role="group"
+        @keydown.enter.prevent="openPublication(pub.url)"
+      >
+        <div class="card-label" v-if="pub.label">{{ pub.label }}</div>
+        <div class="card-body">
+          <p class="title">
+            {{ pub.title }}
+            <a
+              v-if="pub.doi"
+              :href="pub.doi"
+              class="pub-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              @click.stop
+              >
+              <i class="mdi mdi-open-in-new"></i>
+            </a>
+          </p>
+          <p class="subtitle">{{ pub.publisher }} | {{ pub.dates }}</p>
+          <div class="content">
+            <ul>
+              <li v-for="(point, pidx) in pub.points" :key="pidx">{{ point }}</li>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 </template>
 
@@ -99,5 +100,14 @@ function openPublication(url) {
 }
 .card-body .content {
   margin-bottom: 24px;
+}
+.card-label {
+  position: absolute;
+  left: -140px;
+  top: 24px;
+  width: 120px;
+  font-size: 1rem;
+  color: red;
+  text-align: right;
 }
 </style>

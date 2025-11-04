@@ -9,16 +9,17 @@ import experience from '../data/experience.json'
         <div class="timeline-line" aria-hidden="true"></div>
         <div class="timeline-items">
             <div class="timeline-item" v-for="(exp, idx) in experience" :key="idx">
-                <div class="timeline-marker" aria-hidden="true"></div>
-                <div class="timeline-card-body">
-                    <p class="title">{{ exp.title }}</p>
-                    <p class="subtitle">{{ exp.company }} | {{ exp.dates }}</p>
-                    <div class="content">
-                      <ul>
-                        <li v-for="(point, idx) in exp.points" :key="idx">{{ point }}</li>
-                      </ul>
-                    </div>
-                </div>
+              <div class="timeline-label" v-if="exp.label">{{ exp.label }}</div>
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-card-body">
+                  <p class="title">{{ exp.title }}</p>
+                  <p class="subtitle">{{ exp.company }} | {{ exp.dates }}</p>
+                  <div class="content">
+                    <ul>
+                      <li v-for="(point, idx) in exp.points" :key="idx">{{ point }}</li>
+                    </ul>
+                  </div>
+              </div>
             </div>
         </div>
     </div>
@@ -88,5 +89,15 @@ import experience from '../data/experience.json'
 }
 .timeline-card-body .content {
     margin-bottom: 24px
+}
+
+.timeline-label {
+  position: absolute;
+  left: -160px;
+  top: 28px;
+  width: 120px;
+  font-size: 1rem;
+  color: red;
+  text-align: right;
 }
 </style>

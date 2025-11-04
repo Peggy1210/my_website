@@ -4,34 +4,35 @@ import projects from '../data/project.json'
 
 <template>
 <div class="section">
-    <h2>Projects</h2>
-    <div class="card-container">
-        <div class="card-items">
-            <div class="card-item" v-for="(proj, idx) in projects" :key="idx">
-                <div class="card-body">
-                    <p class="title">
-                        {{ proj.title }}
-                        <a
-                        v-if="proj.links"
-                        :href="proj.links"
-                        class="proj-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        @click.stop
-                        >
-                        <i class="mdi mdi-open-in-new"></i>
-                      </a>
-                    </p>
-                    <p class="subtitle">{{ proj.keywords.slice(0, 5).join('∙') }} | {{ proj.dates }}</p>
-                    <div class="content">
-                    <ul>
-                        <li v-for="(point, idx) in proj.points" :key="idx">{{ point }}</li>
-                    </ul>
-                    </div>
-                </div>
-            </div>
+  <h2>Projects</h2>
+  <div class="card-container">
+    <div class="card-items">
+      <div class="card-item" v-for="(proj, idx) in projects" :key="idx">
+      <div class="card-label" v-if="proj.label">{{ proj.label }}</div>
+        <div class="card-body">
+          <p class="title">
+            {{ proj.title }}
+            <a
+            v-if="proj.links"
+            :href="proj.links"
+            class="proj-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            @click.stop
+            >
+            <i class="mdi mdi-open-in-new"></i>
+            </a>
+          </p>
+          <p class="subtitle">{{ proj.keywords.slice(0, 5).join('∙') }} | {{ proj.dates }}</p>
+          <div class="content">
+          <ul>
+            <li v-for="(point, idx) in proj.points" :key="idx">{{ point }}</li>
+          </ul>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 </template>
 
@@ -86,5 +87,14 @@ import projects from '../data/project.json'
 }
 .card-body .content {
     margin-bottom: 24px
+}
+.card-label {
+  position: absolute;
+  left: -140px;
+  top: 24px;
+  width: 120px;
+  font-size: 1rem;
+  color: red;
+  text-align: right;
 }
 </style>

@@ -7,7 +7,8 @@
             "Built a similarity-based admission analysis tool to recommend relevant study abroad cases using weighted embedding.",
             "Improved UI/UX for better delivery of information of posts from PTT, the largest bulletin board system in Taiwan."
         ],
-        "links": "https://sait.tw"
+        "links": "https://sait.tw",
+        "label": "NEW!"
     },
     {
         "title": "GUI-ASFormer, Detecting Keyframes in Graphical User Interface Videos",

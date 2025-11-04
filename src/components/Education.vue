@@ -16,19 +16,20 @@ const educations = computed(() => {
         <div class="timeline-line" aria-hidden="true"></div>
         <div class="timeline-items">
             <div class="timeline-item" v-for="(edu, idx) in educations" :key="idx">
-                <div class="timeline-marker" aria-hidden="true"></div>
-                <div class="timeline-card-body">
-                  <div>
-                    <p class="title">{{ edu.institution }}</p>
-                    <p class="subtitle">{{ edu.degree }} | {{ edu.dates }}</p>
-                    <div class="content">
-                      <ul>
-                          <li v-for="(point, idx) in edu.points" :key="idx">{{ point }}</li>
-                      </ul>
-                    </div>
+              <div class="timeline-label" v-if="edu.label">{{ edu.label }}</div>
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-card-body">
+                <div>
+                  <p class="title">{{ edu.institution }}</p>
+                  <p class="subtitle">{{ edu.degree }} | {{ edu.dates }}</p>
+                  <div class="content">
+                    <ul>
+                        <li v-for="(point, idx) in edu.points" :key="idx">{{ point }}</li>
+                    </ul>
                   </div>
-                  <img class="logo" :src="edu.imageUrl" :alt="edu.institution + ' logo'">
                 </div>
+                <img class="logo" :src="edu.imageUrl" :alt="edu.institution + ' logo'">
+              </div>
             </div>
         </div>
     </div>
@@ -108,5 +109,15 @@ const educations = computed(() => {
   margin: 24px;
   object-fit: cover;
   float: right;
+}
+
+.timeline-label {
+  position: absolute;
+  left: -160px;
+  top: 28px;
+  width: 120px;
+  font-size: 1rem;
+  color: red;
+  text-align: right;
 }
 </style>
