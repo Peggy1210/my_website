@@ -3,12 +3,14 @@
         "institution": "University of Michigan",
         "degree": "Master of Data Science",
         "dates": "Aug 2024 - Present",
-        "points": []
+        "points": [],
+        "logo": "umich.jpeg"
     },
     {
         "institution": "National Tsing Hua University",
         "degree": "Bachelor of Science - Interdisciplinary Program of Science",
         "dates": "Sep 2019 - Jan 2024",
-        "points": []
+        "points": [],
+        "logo": "nthu.png"
     }
 ]

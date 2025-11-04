@@ -1,5 +1,12 @@
 <script setup>
-import educations from '../data/education.json'
+import { computed } from 'vue'
+import educationData from '../data/education.json'
+const educations = computed(() => {
+  return educationData.map(e => ({
+    ...e,
+    imageUrl: new URL(`../assets/education_img/${e.logo}`, import.meta.url).href
+  }))
+})
 </script>
 
 <template>
@@ -11,13 +18,16 @@ import educations from '../data/education.json'
             <div class="timeline-item" v-for="(edu, idx) in educations" :key="idx">
                 <div class="timeline-marker" aria-hidden="true"></div>
                 <div class="timeline-card-body">
+                  <div>
                     <p class="title">{{ edu.institution }}</p>
                     <p class="subtitle">{{ edu.degree }} | {{ edu.dates }}</p>
                     <div class="content">
-                    <ul>
-                        <li v-for="(point, idx) in edu.points" :key="idx">{{ point }}</li>
-                    </ul>
+                      <ul>
+                          <li v-for="(point, idx) in edu.points" :key="idx">{{ point }}</li>
+                      </ul>
                     </div>
+                  </div>
+                  <img class="logo" :src="edu.imageUrl" :alt="edu.institution + ' logo'">
                 </div>
             </div>
         </div>
@@ -62,6 +72,9 @@ import educations from '../data/education.json'
   box-shadow: 0 0 0 6px rgba(25,118,210,0.06);
 }
 .timeline-card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: #fff;
   border: 1px solid #ececec;
   padding: 0 24px;
@@ -88,5 +101,12 @@ import educations from '../data/education.json'
 }
 .timeline-card-body .content {
     margin-bottom: 24px
+}
+.timeline-card-body .logo {
+  height: 40px;
+  width: 40px;
+  margin: 24px;
+  object-fit: cover;
+  float: right;
 }
 </style>
