@@ -2,11 +2,13 @@
 import Profile from '../components/Profile.vue'
 import Publication from '../components/Publication.vue'
 import Project from '../components/Project.vue'
+import Education from '../components/Education.vue'
 </script>
 
 <template>
   <div class="root">
     <Profile />
+    <Education />
     <Publication />
     <Project />
   </div>
