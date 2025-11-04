@@ -5,11 +5,13 @@ import Project from '../components/Project.vue'
 import Education from '../components/Education.vue'
 import Experience from '../components/Experience.vue'
 import SideProject from '../components/SideProject.vue'
+import Updates from '../components/Updates.vue'
 </script>
 
 <template>
   <div class="root">
     <Profile />
+    <Updates />
     <Education />
     <Experience />
     <Publication />
