@@ -9,6 +9,7 @@ import Updates from '../components/Updates.vue'
 import Fab from '../components/Fab.vue'
 import Navigation from '../components/Navigation.vue'
 import SkillSet from '../components/SkillSet.vue'
+import NavButton from '../components/NavButton.vue'
 
 const sectionIds = [
   { id: 'education-section', name: 'Education' },
@@ -24,6 +25,7 @@ const sectionIds = [
     <Navigation :sectionId="sectionIds" />
     <SkillSet />
     <Updates />
+    <NavButton :nextSectionId="'education-section'" />
     <Education />
     <Experience />
     <Publication />
