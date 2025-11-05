@@ -175,7 +175,8 @@ watch(() => props.images, () => {
 .flashcard-image-wrapper {
   width: 80%;
   max-width: 80%;
-  max-height: 360px; /* Fixed max height to keep section height consistent */
+  min-height: 80%;
+  max-height: 80%; /* Fixed max height to keep section height consistent */
   display: flex;
   align-items: center;
   justify-content: center;
