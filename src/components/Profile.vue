@@ -18,7 +18,7 @@ const profileImages = computed(() => {
       <div class="subtitle">Master of Data Science @ University of Michigan</div>
       <div class="statement">
           I'm an active learner deeply passionate about <b>Machine Learning and Data Engineering</b>. 
-          I have experience working with big data, natural language processing, and sfull-stack 
+          I have experience working with big data, natural language processing, and full-stack 
           development, and love building AI solutions to solve real-world problems.
       </div>
       <div class="statement">
