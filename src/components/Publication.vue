@@ -9,7 +9,7 @@ function openPublication(url) {
 </script>
 
 <template>
-<div class="section">
+<div class="section" id="publications-section">
   <h2>Publications</h2>
   <div class="card-container">
     <div class="card-items">

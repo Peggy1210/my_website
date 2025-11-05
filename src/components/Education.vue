@@ -10,7 +10,7 @@ const educations = computed(() => {
 </script>
 
 <template>
-<div class="section">
+<div class="section" id="education-section">
     <h2>Education</h2>
     <div class="timeline-container">
         <div class="timeline-line" aria-hidden="true"></div>

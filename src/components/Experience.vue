@@ -3,7 +3,7 @@ import experience from '../data/experience.json'
 </script>
 
 <template>
-<div class="section">
+<div class="section" id="experience-section">
     <h2>Experience</h2>
     <div class="timeline-container">
         <div class="timeline-line" aria-hidden="true"></div>

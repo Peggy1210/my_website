@@ -3,7 +3,7 @@ import projects from '../data/project.json'
 </script>
 
 <template>
-<div class="section">
+<div class="section" id="projects-section">
   <h2>Projects</h2>
   <div class="card-container">
     <div class="card-items">
