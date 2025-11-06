@@ -1,11 +1,16 @@
 <script setup>
-import publications from '../data/publication.json'
+const props = defineProps({
+    publications: {
+        type: Array,
+        required: true
+    }
+});
 
-// Open publication URL in a new tab when Enter is pressed or the link is clicked
 function openPublication(url) {
   if (!url) return
   window.open(url, '_blank', 'noopener')
 }
+
 </script>
 
 <template>
@@ -15,7 +20,7 @@ function openPublication(url) {
     <div class="card-items">
       <div
         class="card-item"
-        v-for="(pub, idx) in publications"
+        v-for="(pub, idx) in props.publications"
         :key="idx"
         tabindex="0"
         role="group"

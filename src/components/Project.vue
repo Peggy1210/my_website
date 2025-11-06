@@ -1,5 +1,10 @@
 <script setup>
-import projects from '../data/project.json'
+const props = defineProps({
+    projects: {
+        type: Array,
+        required: true
+    }
+});
 </script>
 
 <template>
@@ -7,7 +12,7 @@ import projects from '../data/project.json'
   <h2>Projects</h2>
   <div class="card-container">
     <div class="card-items">
-      <div class="card-item" v-for="(proj, idx) in projects" :key="idx">
+      <div class="card-item" v-for="(proj, idx) in props.projects" :key="idx">
       <div class="card-label" v-if="proj.label">{{ proj.label }}</div>
         <div class="card-body">
           <p class="title">

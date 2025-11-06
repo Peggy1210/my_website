@@ -1,51 +1,25 @@
 <script setup>
-const skills = [
-  "Machine Learning",
-  "Data Engineering",
-  "SQL",
-  "Cloud Computing",
-  "JavaScript",
-  "Web Development",
-  "AI",
-  "Deep Learning",
-  "C/C++",
-  "C#",
-  "Python",
-  "JavaScript",
-  "Java",
-  "HTML",
-  "CSS",
-  "R",
-  "Kotlin",
-  "Google Cloud Platform",
-  "GitHub",
-  "git",
-  "GitLab",
-  "PyTorch",
-  "Tensorflow",
-  "scikit-learn",
-  "keras",
-  "spark",
-  "CUDA",
-  "EDA",
-  "NLP",
-  "UI/UX",
-  "Data Analysis",
-  "Data Science",
-  "Data Visualization",
-  "Microsoft Azure",
-  "Distributed System"
-]
+const props = defineProps({
+    searchbox: {
+        type: Boolean,
+        required: false,
+        default: false
+    },
+    skills: {
+        type: Array(String),
+        required: true
+    }
+});
 </script>
 
 <template>
 <div class="section-nav">
     <div class="title">Or find some specific keywords?</div>
-    <div class="searchbox">
+    <div v-if="props.searchbox" class="searchbox">
         <input type="text" placeholder="Search..." />
     </div>
     <div class="chip-container">
-        <div v-for="skill in skills" class="chip">{{ skill }}</div>
+        <div v-for="skill in props.skills" class="chip">{{ skill }}</div>
 
     </div>
 </div>
@@ -73,6 +47,7 @@ const skills = [
     height: 48px;
     align-items: center;
     padding: 0 8px;
+    margin-bottom: 32px;
 }
 
 .section-nav .searchbox input[type="text"] {
@@ -101,7 +76,7 @@ const skills = [
   justify-content: center;
   gap: 8px;
   flex-wrap: wrap;
-  margin-top: 48px
+  margin-top: 48px 0;
 }
 .section-nav .chip-container .chip {
   padding: 6px 12px;

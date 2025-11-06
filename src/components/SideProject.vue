@@ -1,14 +1,12 @@
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
-import sideProjectData from '../data/side-project.json'
 
-// Resolve image urls at build time
-const sideProjects = computed(() => {
-  return sideProjectData.map(s => ({
-    ...s,
-    imageUrl: new URL(`../assets/side_project_img/${s.image}`, import.meta.url).href
-  }))
-})
+const props = defineProps({
+    sideProjects: {
+        type: Array,
+        required: true
+    }
+});
 
 // Responsive column-based layout (left-to-right ordering).
 // We split items into N columns (round-robin) so visual order is
@@ -47,7 +45,7 @@ onBeforeUnmount(() => {
 
 const columns = computed(() => {
   const cols = Array.from({ length: Math.max(1, columnsCount.value) }, () => [])
-  sideProjects.value.forEach((item, i) => {
+  props.sideProjects.forEach((item, i) => {
     const idx = i % cols.length
     cols[idx].push(item)
   })

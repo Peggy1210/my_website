@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from 'vue'
 import Profile from '../components/Profile.vue'
 import Publication from '../components/Publication.vue'
 import Project from '../components/Project.vue'
@@ -17,20 +18,49 @@ const sectionIds = [
   { id: 'publications-section', name: 'Publications' },
   { id: 'projects-section', name: 'Projects' }
 ]
+
+import skills from '../data/skills.json'
+import sideProjectData from '../data/side-project.json'
+import publications from '../data/publication.json'
+import projects from '../data/project.json'
+import updatesData from '../data/updates.json'
+import experience from '../data/experience.json'
+import educationData from '../data/education.json'
+
+const sideProjects = computed(() => {
+  return sideProjectData.map(s => ({
+    ...s,
+    imageUrl: new URL(`../assets/side_project_img/${s.image}`, import.meta.url).href
+  }))
+})
+
+const updates = computed(() => {
+  return updatesData.map(u => ({
+    ...u,
+    imageUrl: new URL(`../assets/updates_img/${u.image}`, import.meta.url).href
+  }))
+})
+
+const educations = computed(() => {
+  return educationData.map(e => ({
+    ...e,
+    imageUrl: new URL(`../assets/education_img/${e.logo}`, import.meta.url).href
+  }))
+})
 </script>
 
 <template>
   <div class="root">
     <Profile />
     <Navigation :sectionId="sectionIds" />
-    <SkillSet />
-    <Updates />
+    <SkillSet :searchbox="true" :skills="skills"/>
+    <Updates :updates="updates" />
     <NavButton :nextSectionId="'education-section'" />
-    <Education />
-    <Experience />
-    <Publication />
-    <Project />
-    <SideProject />
+    <Education :educations="educations" />
+    <Experience :experience="experience" />
+    <Publication :publications="publications" />
+    <Project :projects="projects" />
+    <SideProject :sideProjects="sideProjects" />
     <Fab />
   </div>
 </template>

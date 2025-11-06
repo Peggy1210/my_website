@@ -1,12 +1,10 @@
 <script setup>
-import { computed } from 'vue'
-import educationData from '../data/education.json'
-const educations = computed(() => {
-  return educationData.map(e => ({
-    ...e,
-    imageUrl: new URL(`../assets/education_img/${e.logo}`, import.meta.url).href
-  }))
-})
+const props = defineProps({
+    educations: {
+        type: Array,
+        required: true
+    }
+});
 </script>
 
 <template>
@@ -15,7 +13,7 @@ const educations = computed(() => {
     <div class="timeline-container">
         <div class="timeline-line" aria-hidden="true"></div>
         <div class="timeline-items">
-            <div class="timeline-item" v-for="(edu, idx) in educations" :key="idx">
+            <div class="timeline-item" v-for="(edu, idx) in props.educations" :key="idx">
               <div class="timeline-label" v-if="edu.label">{{ edu.label }}</div>
               <div class="timeline-marker" aria-hidden="true"></div>
               <div class="timeline-card-body">

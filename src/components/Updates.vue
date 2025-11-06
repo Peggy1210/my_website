@@ -1,12 +1,10 @@
 <script setup>
-import { computed } from 'vue'
-import updatesData from '../data/updates.json'
-const updates = computed(() => {
-  return updatesData.map(u => ({
-    ...u,
-    imageUrl: new URL(`../assets/updates_img/${u.image}`, import.meta.url).href
-  }))
-})
+const props = defineProps({
+    updates: {
+        type: Array,
+        required: true
+    }
+});
 </script>
 
 <template>
@@ -14,7 +12,7 @@ const updates = computed(() => {
     <h2>Quick Updates</h2>
     <div class="updates-list">
     <!-- Add update items here -->
-    <div class="updates-item" v-for="(u, i) in updates" :key="i">
+    <div class="updates-item" v-for="(u, i) in props.updates" :key="i">
         <img class="updates-img" :src="u.imageUrl" :alt="`Update ${i}`" />
         <p class="updates-description"><span class="update-description-title">{{ u.dates }}</span>{{ u.description }}</p>
     </div>

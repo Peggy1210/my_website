@@ -1,5 +1,10 @@
 <script setup>
-import experience from '../data/experience.json'
+const props = defineProps({
+    experience: {
+        type: Array,
+        required: true
+    }
+});
 </script>
 
 <template>
@@ -8,7 +13,7 @@ import experience from '../data/experience.json'
     <div class="timeline-container">
         <div class="timeline-line" aria-hidden="true"></div>
         <div class="timeline-items">
-            <div class="timeline-item" v-for="(exp, idx) in experience" :key="idx">
+            <div class="timeline-item" v-for="(exp, idx) in props.experience" :key="idx">
               <div class="timeline-label" v-if="exp.label">{{ exp.label }}</div>
               <div class="timeline-marker" aria-hidden="true"></div>
               <div class="timeline-card-body">
