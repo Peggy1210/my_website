@@ -3,6 +3,7 @@
         "title": "Graduate Student Instructor - SI 650 Information Retrieval",
         "company": "School of Information, University of Michigan",
         "dates": "Aug 2025 - Present",
+        "keywords": ["Teaching", "Information Retrieval", "NLP", "Machine Learning"],
         "points": [
             "Facilitate weekly office hours and assist students with coursework and projects.",
             "Grade assignments and provide constructive feedback to enhance student learning.",
@@ -14,6 +15,7 @@
         "title": "R&D Intern",
         "company": "BlockChain Security Corporation",
         "dates": "Jun 2025 - Aug 2025",
+        "keywords": ["OCR", "Image Processing", "Text Recognition", "Filtering", "Machine Learning", "Python"],
         "points": [
             "Constructed an OCR pipeline for identifying recovery seed phrases in real-world images by combining image processing, text recognition using PaddleOCR, and phrase validation using a Trie-based matching over the BIP-39 dictionary.",
             "Built a lightweight filtering system using Laplacian blur detection to improve efficiency and increase recall rate by 40%."
@@ -23,6 +25,7 @@
         "title": "Research Assistant",
         "company": "Information Technology Service Center, NYCU",
         "dates": "Feb 2024 - Aug 2025",
+        "keywords": ["NLP", "Machine Learning", "Data Analysis", "EDA", "Python", "Healthcare"],
         "points": [
             "Evaluated the AI chatbot's performance on the center's website through NLP methods, and analyzed the chatbot usage.",
             "Performed exploratory data analysis (EDA) on post-graduate year medical student training outcome data and trained ML models such as regression and random forest with more than 0.85 accuracy to provide insight on future training."
@@ -32,6 +35,7 @@
         "title": "R&D AI Engineer Intern",
         "company": "Biomedica Corporation",
         "dates": "Mar 2024 - Aug 2024",
+        "keywords": ["Deep Learning", "Computer Vision", "Image Segmentation", "YOLO", "Python", "Medical Imaging", "Machine Learning"],
         "points": [
             "Trained deep learning models with YOLO-v8 and YOLO-v9 frameworks to automate image segmentation, achieving an average MAP of over 0.90 and over 0.95 with image augmentation.",
             "Developed algorithms that check image quality, analyze medical images, and diagnose diseases with the segmentation result, achieving an average accuracy of over 0.85."

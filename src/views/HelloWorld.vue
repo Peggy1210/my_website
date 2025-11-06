@@ -53,7 +53,17 @@ const educations = computed(() => {
   <div class="root">
     <Profile />
     <Navigation :sectionId="sectionIds" />
-    <SkillSet :searchbox="true" :skills="skills"/>
+    <SkillSet
+      :searchbox="true"
+      :skills="skills"
+      :data="{
+        educations: educations,
+        experience: experience,
+        publications: publications,
+        projects: projects,
+        sideProjects: sideProjects
+      }"
+    />
     <Updates :updates="updates" />
     <NavButton :nextSectionId="'education-section'" />
     <Education :educations="educations" />
