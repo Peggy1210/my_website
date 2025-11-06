@@ -41,9 +41,9 @@ const skills = [
 <template>
 <div class="section-nav">
     <div class="title">Or find some specific keywords?</div>
-    <!-- <div class="searchbox">
+    <div class="searchbox">
         <input type="text" placeholder="Search..." />
-    </div> -->
+    </div>
     <div class="chip-container">
         <div v-for="skill in skills" class="chip">{{ skill }}</div>
 
@@ -66,26 +66,42 @@ const skills = [
   margin-bottom: 40px;
 }
 .section-nav .searchbox {
-  display: block;
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: 48px;
+    align-items: center;
+    padding: 0 8px;
 }
+
 .section-nav .searchbox input[type="text"] {
-  width: 600px;
-  height: 24px;
-  padding: 8px 24px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 24px;
-  transition: border-color 120ms ease;
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 10px 16px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+    transition: border-color 120ms ease;
+}
+
+.section-nav .searchbox input[type="text"]:focus {
+    outline: none;
+    border-color: #1976d2;
+    box-shadow: 0 0 0 4px rgba(25,118,210,0.06);
 }
 
 .section-nav .chip-container {
-  width: 60%;
+  width: 80%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 8px;
   flex-wrap: wrap;
-  margin-top: 24px
+  margin-top: 48px
 }
 .section-nav .chip-container .chip {
   padding: 6px 12px;

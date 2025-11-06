@@ -94,10 +94,21 @@ import experience from '../data/experience.json'
 .timeline-label {
   position: absolute;
   left: -160px;
+  right: auto;
   top: 28px;
   width: 120px;
   font-size: 1rem;
   color: red;
   text-align: right;
+  z-index: 10;
+}
+
+@media (max-width: 900px) {
+  .timeline-label {
+    left: auto;
+    right: -10px;
+    top: -20px;
+    transform: rotate(30deg);
+  }
 }
 </style>

@@ -73,11 +73,26 @@ const profileImages = computed(() => {
   color: #444;
 }
 
+.contact-icons {
+  display: flex;
+  flex-direction: row;
+}
+
 .contact-icons a {
   margin-right: 32px;
   color: inherit;
   text-decoration: none;
   font-size: 1.4rem;
   color: #1976d2;
+}
+
+@media (max-width: 900px) {
+  .profile {
+    flex-direction: column;
+  }
+
+  .profile-description {
+    max-width: 100%;
+  }
 }
 </style>

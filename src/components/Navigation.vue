@@ -54,6 +54,7 @@ const scrollTo = (sectionId) => {
 .section-nav .container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
   margin-left: 24px;

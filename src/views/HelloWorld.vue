@@ -38,5 +38,18 @@ const sectionIds = [
 <style scoped>
 .root {
   padding: 120px 160px;
+  padding-bottom: 40px;
+}
+
+@media (max-width: 900px) {
+  .root {
+    padding: 80px 40px;
+  }
+}
+
+@media (max-width: 560px) {
+  .root {
+    padding: 40px 20px;
+  }
 }
 </style> 
