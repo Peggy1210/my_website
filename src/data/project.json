@@ -1,14 +1,23 @@
 [
     {
         "title": "SAIT, Study Abroad Information for Taiwanese Students",
+        "keywords": ["C++", "CUDA", "GPU Programming", "Pytorch", "Machine Learning", "Git"],
+        "dates": "Fall 2025",
+        "points": [
+            "Optimized CUDA CNN convolution kernels using output parallelism, shared/constant memory, channel blocking, memory coalescing, and occupancy tuning on NVIDIA V100.",
+            "Achieved 341× speedup over a single-threaded CPU baseline (13.6 ms → 0.0398 ms) through profiling-driven kernel optimization and occupancy analysis with Nsight Compute."
+        ],
+        "label": "NEW!"
+    },
+    {
+        "title": "SAIT, Study Abroad Information for Taiwanese Students",
         "keywords": ["Vue", "Git", "Python", "Machine Learning"],
         "dates": "Fall 2024",
         "points": [
             "Built a similarity-based admission analysis tool to recommend relevant study abroad cases using weighted embedding.",
             "Improved UI/UX for better delivery of information of posts from PTT, the largest bulletin board system in Taiwan."
         ],
-        "links": "https://sait.tw",
-        "label": "NEW!"
+        "links": "https://sait.tw"
     },
     {
         "title": "GUI-ASFormer, Detecting Keyframes in Graphical User Interface Videos",
