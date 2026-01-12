@@ -1,8 +1,44 @@
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
+
 const props = defineProps({
     updates: {
         type: Array,
         required: true
+    }
+});
+
+const updatesList = ref(null);
+let autoScrollInterval = null;
+
+onMounted(() => {
+    if (updatesList.value && props.updates.length > 3) {
+        autoScrollInterval = setInterval(() => {
+            const container = updatesList.value;
+            const itemWidth = container.scrollWidth / props.updates.length;
+            
+            // Scroll by one item width
+            container.scrollBy({
+                left: itemWidth,
+                behavior: 'smooth'
+            });
+            
+            // Reset to start if we've reached the end
+            if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
+                setTimeout(() => {
+                    container.scrollTo({
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            }
+        }, 3000);
+    }
+});
+
+onUnmounted(() => {
+    if (autoScrollInterval) {
+        clearInterval(autoScrollInterval);
     }
 });
 </script>
@@ -10,12 +46,11 @@ const props = defineProps({
 <template>
 <div class="section" id="update-section">
     <h2>Quick Updates</h2>
-    <div class="updates-list">
-    <!-- Add update items here -->
-    <div class="updates-item" v-for="(u, i) in props.updates" :key="i">
-        <img class="updates-img" :src="u.imageUrl" :alt="`Update ${i}`" />
-        <p class="updates-description"><span class="update-description-title">{{ u.dates }}</span>{{ u.description }}</p>
-    </div>
+    <div class="updates-list" ref="updatesList">
+      <div class="updates-item" v-for="(u, i) in props.updates" :key="i">
+          <img class="updates-img" :src="u.imageUrl" :alt="`Update ${i}`" />
+          <p class="updates-description"><span class="update-description-title">{{ u.dates }}</span>{{ u.description }}</p>
+      </div>
     </div>
 </div>
 </template>
@@ -30,12 +65,16 @@ const props = defineProps({
   flex-direction: row;
   gap: 12px;
   margin-top: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
 }
 
 .updates-item {
-  /* make three equal columns; allow children to clip overflow */
-  flex: 1 1 0;
-  min-width: 0; /* allow flex items to shrink properly */
+  flex: 0 0 calc(33.333% - 8px);
+  min-width: calc(33.333% - 8px);
   border-radius: 8px;
   overflow: hidden;
   background: #fff;
@@ -43,6 +82,7 @@ const props = defineProps({
   flex-direction: column;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   transition: transform 220ms cubic-bezier(.2,.8,.2,1), box-shadow 220ms;
+  scroll-snap-align: start;
 }
 .updates-item:hover,
 .updates-item:focus,

@@ -1,5 +1,15 @@
 [
   {
+    "image": "IMG_1447.jpg",
+    "dates": "01.07.2026",
+    "description": "After a long break in sunny California, I’m back at school for my last semester in snowy Michigan! Excited to share more updates soon!"
+  },
+  {
+    "image": "cuda_opt.png",
+    "dates": "12.15.2025",
+    "description": "Our CUDA Optimization project hit the leaderboard at 6th place out of 32 teams with a 341× speedup over a single-threaded CPU baseline!"
+  },
+  {
     "image": "IMG_8480.JPG",
     "dates": "09.23.2025",
     "description": "Happy to share that the website is now live :D"
