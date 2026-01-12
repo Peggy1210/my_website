@@ -66,10 +66,11 @@ onUnmounted(() => {
   gap: 12px;
   margin-top: 16px;
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: visible;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 8px;
+  padding: 12px 0 40px 0;
+  margin-bottom: -32px;
 }
 
 .updates-item {
