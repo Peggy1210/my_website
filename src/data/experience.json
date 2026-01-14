@@ -40,5 +40,14 @@
             "Trained deep learning models with YOLO-v8 and YOLO-v9 frameworks to automate image segmentation, achieving an average MAP of over 0.90 and over 0.95 with image augmentation.",
             "Developed algorithms that check image quality, analyze medical images, and diagnose diseases with the segmentation result, achieving an average accuracy of over 0.85."
         ]
+    },
+    {
+        "title": "Software Engineer Intern",
+        "company": "Institute of Information Science, Academia Sinica",
+        "dates": "Jul 2022 - Jan 2024",
+        "keywords": ["Android Development", "Mobile App Development", "Kotlin", "Python", "Data Collection", "Healthcare"],
+        "points": [
+            "Engineered a digital diary application using Android Studio, enabling the collection of clinical data from over 200 patients diagnosed with GERD while integrating an online questionnaire for comprehensive health reporting."
+        ]
     }
 ]
