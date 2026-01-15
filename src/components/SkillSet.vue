@@ -30,7 +30,9 @@ function onSkillSearch(query) {
     //     });
     // }
     useSkillSearch(q).then(result => {
-        searchResults.value = result
+        searchResults.value = Object.fromEntries(
+          Object.entries(result).filter(([_, items]) => items.length > 0)
+        )
         showModal.value = true
         console.log('searchResult:', searchResult)
     }).catch(err => {
@@ -79,8 +81,8 @@ function closeModal() {
       <!-- Modal Body with Results -->
       <div class="modal-body">
         <div v-for="(items, category) in searchResults" :key="category" class="result-category">
-          <h3 v-if="items.length > 0" class="category-title">{{ category }} ({{ items.length }})</h3>
-          <div v-if="items.length > 0" class="result-items">
+          <h3 class="category-title">{{ category }} ({{ items.length }})</h3>
+          <div class="result-items">
             <div v-for="(item, idx) in items" :key="idx" class="result-item">
               <div class="item-title">
                 {{ item.title || item.name || 'Untitled' }}
@@ -260,7 +262,7 @@ function closeModal() {
 }
 
 .modal-body {
-  padding: 24px;
+  padding: 0 24px;
   overflow-y: auto;
   flex: 1;
 }
