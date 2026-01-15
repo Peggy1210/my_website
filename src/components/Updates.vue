@@ -46,10 +46,15 @@ onUnmounted(() => {
 <template>
 <div class="section" id="update-section">
     <h2>Quick Updates</h2>
-    <div class="updates-list" ref="updatesList">
-      <div class="updates-item" v-for="(u, i) in props.updates" :key="i">
+
+    <div class="updates-scroll">
+      <div class="updates-list" ref="updatesList">
+        <div class="updates-item" v-for="(u, i) in props.updates" :key="i">
           <img class="updates-img" :src="u.imageUrl" :alt="`Update ${i}`" />
-          <p class="updates-description"><span class="update-description-title">{{ u.dates }}</span>{{ u.description }}</p>
+          <p class="updates-description">
+            <span class="update-description-title">{{ u.dates }}</span>{{ u.description }}
+          </p>
+        </div>
       </div>
     </div>
 </div>
@@ -60,22 +65,23 @@ onUnmounted(() => {
     margin-top: 40px;
 }
 
+.updates-scroll {
+  padding: 16px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: thin;
+}
 .updates-list {
   display: flex;
-  flex-direction: row;
-  gap: 12px;
-  margin-top: 16px;
-  overflow-x: auto;
-  overflow-y: visible;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding: 12px 0 40px 0;
-  margin-bottom: -32px;
+  gap: 16px;
+  margin-bottom: 0;
 }
 
 .updates-item {
-  flex: 0 0 calc(33.333% - 8px);
-  min-width: calc(33.333% - 8px);
+  flex: 0 0 calc(33.333% - 12px);
+  min-width: calc(33.333% - 12px);
   border-radius: 8px;
   overflow: hidden;
   background: #fff;
