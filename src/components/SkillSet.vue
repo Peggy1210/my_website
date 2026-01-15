@@ -1,21 +1,12 @@
 <script setup>
 import { ref } from 'vue'
+import { skills, useSkillSearch } from '../js/skillSearch'
 
 const props = defineProps({
     searchbox: {
         type: Boolean,
         required: false,
         default: false
-    },
-    skills: {
-        type: Array(String),
-        required: true,
-        default: () => []
-    },
-    data: {
-        type: Object,
-        required: false,
-        default: () => []
     }
 });
 
@@ -30,18 +21,21 @@ function onSkillSearch(query) {
     searchQuery.value = q
     const searchResult = {}
     
-    for (const key in props.data) {
-        searchResult[key] = props.data[key].filter(item => {
-            const keywords = item.keywords || [];
-            return keywords.some(keyword =>
-                keyword.toLowerCase().includes(q)
-            );
-        });
-    }
-    
-    searchResults.value = searchResult
-    showModal.value = true
-    console.log('searchResult:', searchResult)
+    // for (const key in props.data) {
+    //     searchResult[key] = props.data[key].filter(item => {
+    //         const keywords = item.keywords || [];
+    //         return keywords.some(keyword =>
+    //             keyword.toLowerCase().includes(q)
+    //         );
+    //     });
+    // }
+    useSkillSearch(q).then(result => {
+        searchResults.value = result
+        showModal.value = true
+        console.log('searchResult:', searchResult)
+    }).catch(err => {
+        console.error('Error during skill search:', err)
+    })
 }
 
 function closeModal() {
@@ -57,7 +51,7 @@ function closeModal() {
   </div>
     <div class="chip-container">
         <div
-          v-for="skill in props.skills"
+          v-for="skill in skills"
           :key="skill"
           class="chip"
           role="button"
@@ -103,7 +97,12 @@ function closeModal() {
               </div>
               <div v-if="item.description" class="item-description">{{ item.description }}</div>
               <div v-if="item.keywords" class="item-keywords">
-                <span v-for="kw in item.keywords" :key="kw" class="keyword-tag">{{ kw }}</span>
+                <span v-for="kw in item.keywords" :key="kw" class="keyword-tag">
+                  <span class="highlight" v-if="kw.toLowerCase().includes(searchQuery.toLowerCase())">
+                    {{ kw }}
+                  </span>
+                  <span v-else>{{ kw }}</span>
+                </span>
               </div>
             </div>
           </div>
@@ -329,6 +328,12 @@ function closeModal() {
   color: #1976d2;
   border-radius: 12px;
   font-size: 0.85rem;
+}
+
+.keyword-tag .highlight {
+  font-weight: 600;
+  color: #1976d2;
+  background: #ffeb3b;
 }
 
 .no-results {

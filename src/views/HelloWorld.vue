@@ -19,7 +19,6 @@ const sectionIds = [
   { id: 'projects-section', name: 'Projects' }
 ]
 
-import skills from '../data/skills.json'
 import sideProjectData from '../data/side-project.json'
 import publications from '../data/publication.json'
 import projects from '../data/project.json'
@@ -55,14 +54,6 @@ const educations = computed(() => {
     <Navigation :sectionId="sectionIds" />
     <SkillSet
       :searchbox="true"
-      :skills="skills"
-      :data="{
-        educations: educations,
-        experience: experience,
-        publications: publications,
-        projects: projects,
-        sideProjects: sideProjects
-      }"
     />
     <Updates :updates="updates" />
     <NavButton :nextSectionId="'education-section'" />
