@@ -1,18 +1,39 @@
 [
     {
+        "title": "Optimization Dynamics on Representational Collapse",
+        "keywords": ["Python", "Pytorch", "Machine Learning", "Analysis", "CUDA", "Git"],
+        "dates": "Winter 2026",
+        "points": [
+            "Researched representational collapse (“Tunnel Effect”) in deep neural networks by analyzing optimization dynamics across MLP, VGG-19, and ResNet architectures using PyTorch and CIFAR-10.",
+            "Implemented and compared multiple optimizers including SGD, AdamW, and Muon, using techniques such as linear probing, CKA similarity, and singular value spectrum analysis to study feature compression and rank collapse."
+        ],
+        "links": "",
+        "label": "NEW!"
+    },
+    {
+        "title": "MRI Denoising with Collaborative Non-Local Means",
+        "keywords": ["Computer Vision", "Python", "Git"],
+        "dates": "Winter 2026",
+        "points": [
+            "Reproduced and extended the MRI denoising method Collaborative Non-Local Means on the BrainWeb dataset.",
+            "Accelerated the pipeline through vectorization and experimented with alternative weighting functions and adaptive patch/search window selection to improve PSNR up to 40.75 db and SSIM up to 0.97."
+        ],
+        "links": "",
+        "label": "NEW!"
+    },
+    {
         "title": "Optimization of Convolution Kernels with CUDA",
         "keywords": ["C++", "CUDA", "GPU Programming", "Pytorch", "Machine Learning", "Git"],
         "dates": "Fall 2025",
         "points": [
             "Optimized CUDA CNN convolution kernels using output parallelism, shared/constant memory, channel blocking, memory coalescing, and occupancy tuning on NVIDIA V100.",
             "Achieved 341× speedup over a single-threaded CPU baseline (13.6 ms → 0.0398 ms) through profiling-driven kernel optimization and occupancy analysis with Nsight Compute."
-        ],
-        "label": "NEW!"
+        ]
     },
     {
         "title": "SAIT, Study Abroad Information for Taiwanese Students",
         "keywords": ["Vue", "Git", "Python", "Machine Learning"],
-        "dates": "Fall 2024",
+        "dates": "Fall 2025",
         "points": [
             "Built a similarity-based admission analysis tool to recommend relevant study abroad cases using weighted embedding.",
             "Improved UI/UX for better delivery of information of posts from PTT, the largest bulletin board system in Taiwan."

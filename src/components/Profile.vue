@@ -23,7 +23,7 @@ const profileImages = computed(() => {
       </div>
       <div class="statement">
           Not long ago, I realized my resume alone couldn't fully capture my enthusiasm 
-          and dedication. So, I created this personal website in <b>just one night</b> to quickly 
+          and dedication. So, I created this personal website to quickly 
           showcase my skills, experiences, and commitment. This website is a <b>living portfolio</b> 
           that will be continuously updated as I grow in my career. It's great to see you 
           here! I hope you have a delightful time exploring my workspace :D
