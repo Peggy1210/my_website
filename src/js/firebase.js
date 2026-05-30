@@ -13,7 +13,7 @@ const firebaseConfig = {
   storageBucket: "peggy-workspace.firebasestorage.app",
   messagingSenderId: "356777225661",
   appId: "1:356777225661:web:59cfd0102d6df3294d36d4",
-  measurementId: "G-5N0Y7YZWN9"
+  measurementId: "G-ZGF5D6748M"
 };
 
 // Initialize Firebase
