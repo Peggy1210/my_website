@@ -30,7 +30,7 @@ exports.analyticsSummary = onRequest(
       }
 
       const todayUsers = await getUsers("today", "today");
-      const totalUsers = await getUsers("2000-12-10", "today");
+      const totalUsers = await getUsers("2025-11-01", "today");
 
       console.log("Today's Users:", todayUsers);
       console.log("Total Users:", totalUsers);
