@@ -1,10 +1,32 @@
 <script setup>
+import { ref, onMounted } from 'vue'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import utc from 'dayjs/plugin/utc'
+import { loadAnalyticsSummary } from '@/services/analytics'
+
 dayjs.extend(relativeTime)
 dayjs.extend(utc)
 const VITE_BUILD_TIME = import.meta.env.VITE_BUILD_TIME
+
+const messages = [
+  'people hiring me today?',
+  'people should hire me today',
+  'people deciding my fate today',
+  'people judging me today',
+]
+
+const randomMessage =
+  messages[Math.floor(Math.random() * messages.length)]
+
+const totalUsers = ref(0)
+const todayUsers = ref(0)
+
+onMounted(async () => {
+  const data = await loadAnalyticsSummary()
+  totalUsers.value = data.totalUsers
+  todayUsers.value = data.todayUsers
+})
 </script>
 
 <template>
@@ -12,7 +34,7 @@ const VITE_BUILD_TIME = import.meta.env.VITE_BUILD_TIME
         <p class="title">Peggy's Workspace</p>
         <div class="spanner"></div>
         <div class="header-content">
-            <div class="status">Last update: {{ dayjs.utc(VITE_BUILD_TIME).local().fromNow() }}</div>
+            <div class="status">Last updated {{ dayjs.utc(VITE_BUILD_TIME).local().fromNow() }} • {{ todayUsers }} {{ randomMessage }}</div>
         </div>
     </header>
 </template>
