@@ -3,10 +3,19 @@ const { BetaAnalyticsDataClient } = require("@google-analytics/data");
 
 const analyticsDataClient = new BetaAnalyticsDataClient();
 
+let cachedData = null;
+let cacheExpiry = 0;
+const CACHE_TTL = 5 * 60 * 1000;
+
 exports.analyticsSummary = onRequest(
   { region: "us-central1", cors: true },
   async (req, res) => {
     try {
+      if (cachedData && Date.now() < cacheExpiry) {
+        console.log("Returning cached data");
+        return res.json(cachedData);
+      }
+
       const propertyId = process.env.GA4_PROPERTY_ID;
       console.log("GA4_PROPERTY_ID:", propertyId);
 
@@ -26,10 +35,10 @@ exports.analyticsSummary = onRequest(
       console.log("Today's Users:", todayUsers);
       console.log("Total Users:", totalUsers);
 
-      res.json({
-        todayUsers,
-        totalUsers,
-      });
+      cachedData = { todayUsers, totalUsers };
+      cacheExpiry = Date.now() + CACHE_TTL;
+
+      res.json(cachedData);
     } catch (error) {
       console.error(error);
       res.status(500).json({
