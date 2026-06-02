@@ -1,0 +1,12 @@
+[
+    {
+        "date": "2024-06-02",
+        "content": [
+            "Updated **Highlights** section to include more specific tech focus areas and adjusted the layout for better responsiveness.",
+            "Formatted plain text for better readability by encoding HTML characters to prevent XSS attacks and converting Markdown bold syntax into HTML tags.",
+            "Refined the **Profile** component to enhance mobile viewing experience by changing the flex direction to column on smaller screens.",
+            "Improved the **Updates** component's responsiveness by allowing update items to take up 50% width on smaller screens, ensuring a better display on mobile devices.",
+            "Added **More project coming soon** animation to indicate upcoming content in the Projects section."
+        ]
+    }
+]
