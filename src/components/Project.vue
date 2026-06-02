@@ -1,4 +1,6 @@
 <script setup>
+import { formatJsonString } from '../js/utils';
+
 const props = defineProps({
     projects: {
         type: Array,
@@ -31,7 +33,7 @@ const props = defineProps({
           <p class="subtitle">{{ proj.keywords.slice(0, 5).join('∙') }} | {{ proj.dates }}</p>
           <div class="content">
           <ul>
-            <li v-for="(point, idx) in proj.points" :key="idx">{{ point }}</li>
+            <li v-for="(point, idx) in proj.points" :key="idx" v-html="formatJsonString(point)"></li>
           </ul>
           </div>
         </div>

@@ -1,4 +1,6 @@
 <script setup>
+import { formatJsonString } from '../js/utils';
+
 const props = defineProps({
     publications: {
         type: Array,
@@ -44,7 +46,7 @@ function openPublication(url) {
           <p class="subtitle">{{ pub.publisher }} | {{ pub.dates }}</p>
           <div class="content">
             <ul>
-              <li v-for="(point, pidx) in pub.points" :key="pidx">{{ point }}</li>
+              <li v-for="(point, pidx) in pub.points" :key="pidx" v-html="formatJsonString(point)"></li>
             </ul>
           </div>
         </div>

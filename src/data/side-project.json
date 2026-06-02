@@ -4,7 +4,7 @@
         "image": "insta485.png",
         "keywords": ["Python", "Flask", "React", "Web Development", "Full Stack", "SQL", "LiteSQL"],
         "points": [
-            "Our very own Instagram clone — create an account, share your moments, connect with friends, and spread some likes! Give it a try now!"
+            "Our very own **Instagram clone** — create an account, share your moments, connect with friends, and spread some likes! Give it a try now!"
         ],
         "links": "http://ec2-52-15-76-221.us-east-2.compute.amazonaws.com"
     },
@@ -13,7 +13,7 @@
         "image": "crossyroad.png",
         "keywords": ["Python", "Reinforcement Learning", "Machine Learning"],
         "points": [
-            "A powerful reinforcement learning agent built to conquer the thrilling world of Crossy Road!"
+            "A powerful **reinforcement learning agent** built to conquer the thrilling world of Crossy Road!"
         ],
         "links": "https://github.com/Introduction-to-Machine-Learning-Team4/CrossyRoadPlayer"
     },
@@ -23,7 +23,7 @@
         "keywords": ["Python", "Data Science", "Machine Learning", "Data Analysis", "SQL", "GCP", "Google Cloud Platform", "Healthcare"],
         "dates": "Fall 2023",
         "points": [
-            "Incorporated a machine learning model for the classification of patients with liver cirrhosis and acute kidney injury based on their in-hospital mortality on the MIMIC-IV database using Google Cloud Platform."
+            "Incorporated a **machine learning model** for the classification of patients with liver cirrhosis and acute kidney injury based on their in-hospital mortality on the MIMIC-IV database using **Google Cloud Platform**."
         ],
         "links": "https://github.com/Data-Science-for-Digital-Health-Group4/FinalProject"
     },
@@ -32,7 +32,7 @@
         "image": "default.png",
         "keywords": ["JavaScript", "Database", "SQL", "LiteSQL", "Data Management"],
         "points": [
-            "Improved the basic database systems with advanced indexing methods and speedup algorithms such as SIMD, achieving significant performance gains in throughput."
+            "Improved the basic **database systems** with advanced indexing methods and speedup algorithms such as SIMD, achieving significant performance gains in throughput."
         ],
         "links": "https://github.com/Peggy1210/VanillaDB"
     },

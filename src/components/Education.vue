@@ -1,4 +1,6 @@
 <script setup>
+import { formatJsonString } from '../js/utils';
+
 const props = defineProps({
     educations: {
         type: Array,
@@ -22,7 +24,7 @@ const props = defineProps({
                   <p class="subtitle">{{ edu.degree }} | {{ edu.dates }}</p>
                   <div class="content">
                     <ul>
-                        <li v-for="(point, idx) in edu.points" :key="idx">{{ point }}</li>
+                        <li v-for="(point, idx) in edu.points" :key="idx" v-html="formatJsonString(point)"></li>
                     </ul>
                   </div>
                 </div>

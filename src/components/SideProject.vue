@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+import { formatJsonString } from '../js/utils';
 
 const props = defineProps({
     sideProjects: {
@@ -98,9 +99,7 @@ function openProject(url) {
                       <i class="mdi mdi-open-in-new"></i>
                   </a>
               </p>
-              <div class="content" v-for="(p, i) in proj.points" :key="i">
-                  {{ p }}
-              </div>
+              <div class="content" v-for="(p, i) in proj.points" :key="i" v-html="formatJsonString(p)"></div>
             </div>
           </div>
         </div>

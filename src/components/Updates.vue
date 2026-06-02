@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
+import { formatJsonString } from '../js/utils'
 
 const props = defineProps({
     updates: {
@@ -52,7 +53,8 @@ onUnmounted(() => {
         <div class="updates-item" v-for="(u, i) in props.updates" :key="i">
           <img class="updates-img" :src="u.imageUrl" :alt="`Update ${i}`" />
           <p class="updates-description">
-            <span class="update-description-title">{{ u.dates }}</span>{{ u.description }}
+            <span class="update-description-title">{{ u.dates }}</span>
+            <span v-html="formatJsonString(u.description)"></span>
           </p>
         </div>
       </div>

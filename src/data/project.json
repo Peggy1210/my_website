@@ -4,8 +4,8 @@
         "keywords": ["Python", "Pytorch", "Machine Learning", "Analysis", "CUDA", "Git"],
         "dates": "Winter 2026",
         "points": [
-            "Researched representational collapse (“Tunnel Effect”) in deep neural networks by analyzing optimization dynamics across MLP, VGG-19, and ResNet architectures using PyTorch and CIFAR-10.",
-            "Implemented and compared multiple optimizers including SGD, AdamW, and Muon, using techniques such as linear probing, CKA similarity, and singular value spectrum analysis to study feature compression and rank collapse."
+            "Researched **representational collapse (“Tunnel Effect”)** in deep neural networks by analyzing optimization dynamics across MLP, VGG-19, and ResNet architectures using PyTorch and CIFAR-10.",
+            "Implemented and compared multiple optimizers including SGD, AdamW, and Muon, using techniques such as **linear probing**, **CKA similarity**, and **singular value spectrum analysis** to study feature compression and rank collapse."
         ],
         "links": "",
         "label": "NEW!"
@@ -15,8 +15,8 @@
         "keywords": ["Computer Vision", "Python", "Git"],
         "dates": "Winter 2026",
         "points": [
-            "Reproduced and extended the MRI denoising method Collaborative Non-Local Means on the BrainWeb dataset.",
-            "Accelerated the pipeline through vectorization and experimented with alternative weighting functions and adaptive patch/search window selection to improve PSNR up to 40.75 db and SSIM up to 0.97."
+            "Reproduced and extended the **MRI denoising method Collaborative Non-Local Means** on the BrainWeb dataset.",
+            "Accelerated the pipeline through **vectorization** and experimented with **alternative weighting functions** and **adaptive patch/search window selection** to improve PSNR up to 40.75 db and SSIM up to 0.97."
         ],
         "links": "",
         "label": "NEW!"
@@ -26,7 +26,7 @@
         "keywords": ["C++", "CUDA", "GPU Programming", "Pytorch", "Machine Learning", "Git"],
         "dates": "Fall 2025",
         "points": [
-            "Optimized CUDA CNN convolution kernels using output parallelism, shared/constant memory, channel blocking, memory coalescing, and occupancy tuning on NVIDIA V100.",
+            "**Optimized CUDA CNN convolution kernels** using output parallelism, shared/constant memory, channel blocking, memory coalescing, and occupancy tuning on NVIDIA V100.",
             "Achieved 341× speedup over a single-threaded CPU baseline (13.6 ms → 0.0398 ms) through profiling-driven kernel optimization and occupancy analysis with Nsight Compute."
         ]
     },
@@ -35,7 +35,7 @@
         "keywords": ["Vue", "Git", "Python", "Machine Learning"],
         "dates": "Fall 2025",
         "points": [
-            "Built a similarity-based admission analysis tool to recommend relevant study abroad cases using weighted embedding.",
+            "Built a **similarity-based admission analysis tool** to recommend relevant study abroad cases using weighted embedding.",
             "Improved UI/UX for better delivery of information of posts from PTT, the largest bulletin board system in Taiwan."
         ],
         "links": "https://sait.tw"
@@ -45,7 +45,7 @@
         "keywords": ["Python", "Machine Learning", "Deep Learning", "Transformers", "Computer Vision"],
         "dates": "Winter 2025",
         "points": [
-            "Designed a Transformer-based framework for segmenting actions in GUI videos by enhancing ASFormer with a two-stream encoder, high-resolution embeddings, frame differencing, and multiscale temporal convolutions.",
+            "Designed a **Transformer-based framework** for segmenting actions in GUI videos by enhancing ASFormer with a two-stream encoder, high-resolution embeddings, frame differencing, and multiscale temporal convolutions.",
             "Achieved up to +7.1 improvement in F1@50 and +6.8 in edit distance over baseline ASFormer."
         ],
         "links": "https://github.com/Peggy1210/GUI-ASFormer"
@@ -55,8 +55,8 @@
         "keywords": ["Python", "Information Retrieval", "Machine Learning", "Natural Language Processing"],
         "dates": "Fall 2024",
         "points": [
-            "Implemented an information retrieval system that uses user profiles as queries to match relevant job postings.",
-            "Applied NLP techniques, including text classification, semantic similarity, and ranking models, resulting in a 67% improvement in NDCG score over the baseline model."
+            "Implemented an **information retrieval system** that uses user profiles as queries to match relevant job postings.",
+            "Applied **NLP techniques**, including text classification, semantic similarity, and ranking models, resulting in a 67% improvement in NDCG score over the baseline model."
         ],
         "links": "https://github.com/Peggy1210/job-search-sys"
     },
@@ -65,9 +65,9 @@
         "keywords": ["Python", "Classifier", "Machine Learning", "Bioinformatics", "Flutter"],
         "dates": "Fall 2023",
         "points": [
-            "Vice Captain and Dry Lab Member of team NTHU_Taiwan.",
+            "**Vice Captain and Dry Lab Member** of team NTHU_Taiwan.",
             "Contributed to the design of a colorectal cancer detection kit utilizing circRNA with PCRD and colorimetric test.",
-            "Devised ML models for automatic kit detection and result recognition with accuracy over 0.8 and embedded the model into a mobile app using Flutter."
+            "Devised **ML models for automatic kit detection and result recognition** with accuracy over 0.8 and embedded the model into a mobile app using Flutter."
         ],
         "links": "https://2023.igem.wiki/nthu-taiwan/home"
     }

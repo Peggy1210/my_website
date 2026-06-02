@@ -5,8 +5,8 @@
         "publisher": "IEEE, 2024 International Conference on Future Technologies for Smart Society (ICFTSS)",
         "dates": "Aug 2024",
         "points": [
-            "Developed a retrieval-based chatbot leveraging large language models to enhance customer service interactions.",
-            "Implemented advanced natural language processing techniques to improve response accuracy and relevance.",
+            "Developed a **retrieval-based chatbot** leveraging large language models to enhance customer service interactions.",
+            "Implemented advanced **natural language processing techniques** to improve response accuracy and relevance.",
             "Conducted extensive testing and evaluation to ensure optimal performance in real-world scenarios."
         ],
         "keywords": ["NLP", "Chatbot", "Large Language Models", "Information Retrieval", "Data Analysis", "Machine Learning"],
@@ -19,7 +19,7 @@
         "dates": "Oct 2025",
         "points": [
             "Analyzed the impact of various training content and environmental factors on resident retention rates using statistical methods.",
-            "Utilized data visualization tools to present findings and support decision-making processes.",
+            "Utilized **data visualization tools** to present findings and support decision-making processes.",
             "Collaborated with cross-functional teams to implement strategies aimed at improving retention rates based on research outcomes."
         ],
         "label": "NEW!",

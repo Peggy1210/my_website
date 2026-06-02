@@ -1,4 +1,6 @@
 <script setup>
+import { formatJsonString } from '../js/utils';
+
 const props = defineProps({
     experience: {
         type: Array,
@@ -21,7 +23,7 @@ const props = defineProps({
                   <p class="subtitle">{{ exp.company }} | {{ exp.dates }}</p>
                   <div class="content">
                     <ul>
-                      <li v-for="(point, idx) in exp.points" :key="idx">{{ point }}</li>
+                      <li v-for="(point, idx) in exp.points" :key="idx" v-html="formatJsonString(point)"></li>
                     </ul>
                   </div>
               </div>
