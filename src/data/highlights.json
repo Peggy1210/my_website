@@ -1,0 +1,31 @@
+[
+    {
+        "title": "Experience",
+        "icon": "mdi mdi-puzzle",
+        "color": "#c0392b",
+        "type": "bullet-points",
+        "content": ["Student **@ UMich**", "R&D Intern **@ BlockChain Security**", "Research Assistant **@ NYCU**"]
+    },
+    {
+        "title": "Research Areas",
+        "icon": "mdi mdi-flask",
+        "color": "#f39c12",
+        "type": "list",
+        "content": ["Machine Learning", "Optimization", "Information Retrieval", "Data Mining", "Computer Vision", "Healthcare Information"]
+    },
+    {
+        "title": "Tech Focus",
+        "icon": "mdi mdi-telescope",
+        "color": "#1976d2",
+        "type": "list",
+        "content": ["Model Development", "AI Infra", "CUDA", "Search & Recommendation", "Computer Vision", "NLP", "Full-Stack Development"]
+
+    },
+    {
+        "title": "Recent Projects",
+        "icon": "mdi mdi-tea",
+        "color": "#27ae60",
+        "type": "text",
+        "content": "**SAIT:** Building a platform that aggregates study abroad information for Taiwanese students."
+    }
+]

@@ -72,3 +72,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.h-divider {
+  height: 1.2px;
+  background-color: #ececec;
+  margin: 16px 0px;
+}

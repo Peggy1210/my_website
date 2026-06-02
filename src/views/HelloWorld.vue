@@ -11,6 +11,7 @@ import Fab from '../components/Fab.vue'
 import Navigation from '../components/Navigation.vue'
 import SkillSet from '../components/SkillSet.vue'
 import NavButton from '../components/NavButton.vue'
+import HighLights from '../components/HightLights.vue'
 
 const sectionIds = [
   { id: 'education-section', name: 'Education' },
@@ -25,6 +26,7 @@ import projects from '../data/project.json'
 import updatesData from '../data/updates.json'
 import experience from '../data/experience.json'
 import educationData from '../data/education.json'
+import highlights from '../data/highlights.json'
 
 const sideProjects = computed(() => {
   return sideProjectData.map(s => ({
@@ -51,12 +53,13 @@ const educations = computed(() => {
 <template>
   <div class="root">
     <Profile />
+    <HighLights :highlights="highlights" />
     <Navigation :sectionId="sectionIds" />
     <SkillSet
       :searchbox="true"
     />
-    <Updates :updates="updates" />
     <NavButton :nextSectionId="'education-section'" />
+    <Updates :updates="updates" />
     <Education :educations="educations" />
     <Experience :experience="experience" />
     <Publication :publications="publications" />

@@ -29,7 +29,8 @@ const scrollTo = (sectionId) => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 40px;
+  margin-bottom: 100px;
   padding: 16px;
 }
 .scroll-button {
