@@ -100,6 +100,13 @@ onUnmounted(() => {
   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
+@media (max-width: 900px) {
+  .updates-item {
+    flex: 0 0 calc(50% - 12px);
+    min-width: calc(50% - 12px);
+  }
+}
+
 .updates-img {
   width: 100%;
   height: 200px; /* fixed display height */

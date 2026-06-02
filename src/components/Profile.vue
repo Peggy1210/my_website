@@ -86,7 +86,7 @@ const profileImages = computed(() => {
   color: #1976d2;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .profile {
     flex-direction: column;
   }

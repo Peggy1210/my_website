@@ -50,18 +50,18 @@ const props = defineProps({
 }
 
 .highlights-list {
-  display: flex;
+  display: grid;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 24px;
-  width: 100%;
-}
-
-.highlights-list {
-  display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  width: 100%;
+  width: 80%;
+}
+
+@media (max-width: 1800px) {
+  .highlights-list {
+    width: 100%;
+  }
 }
 
 @media (max-width: 1000px) {
