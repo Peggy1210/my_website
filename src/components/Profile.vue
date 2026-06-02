@@ -15,7 +15,7 @@ const profileImages = computed(() => {
 <div class="profile">
     <div class="profile-description">
       <div class="title">Hi! I'm Peggy!</div>
-      <div class="subtitle">Master of Data Science @ University of Michigan</div>
+      <div class="subtitle">ML Engineer • Software Engineer • Data Scientist</div>
       <div class="statement">
           I'm an active learner deeply passionate about <b>Machine Learning and Data Engineering</b>. 
           I have experience working with big data, natural language processing, and full-stack 
@@ -62,7 +62,7 @@ const profileImages = computed(() => {
 }
 
 .profile .subtitle {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 4px;
 }

@@ -34,7 +34,7 @@ onMounted(async () => {
         <p class="title">Peggy's Workspace</p>
         <div class="spanner"></div>
         <div class="header-content">
-            <div class="status">Last updated {{ dayjs.utc(VITE_BUILD_TIME).local().fromNow() }} • {{ todayUsers }} {{ randomMessage }}</div>
+            <div class="status">Last updated {{ dayjs.utc(VITE_BUILD_TIME).local().fromNow() }}<span class="collapsible-status"> • {{ todayUsers }} {{ randomMessage }}</span></div>
         </div>
     </header>
 </template>
@@ -43,6 +43,7 @@ onMounted(async () => {
 .spanner {
     flex-grow: 1;
 }
+
 .site-header {
     display: flex;
     justify-content: left;
@@ -76,5 +77,11 @@ onMounted(async () => {
 .header-content .status {
     font-size: 0.9em;
     color: #95a5a6;
+}
+
+@media (max-width: 767px) {
+    .header-content .collapsible-status {
+        display: none;
+    }
 }
 </style>

@@ -13,6 +13,15 @@ const props = defineProps({
 // left-to-right then top-to-bottom while allowing variable heights.
 const containerRef = ref(null)
 const columnsCount = ref(3)
+let raf = null
+
+function rafUpdateColumns() {
+  if (raf) cancelAnimationFrame(raf)
+  raf = requestAnimationFrame(() => {
+    updateColumns()
+    raf = null
+  })
+}
 
 function calcCols(width) {
   if (width <= 480) return 1
@@ -31,16 +40,17 @@ let ro = null
 onMounted(() => {
   updateColumns()
   if ('ResizeObserver' in window) {
-    ro = new ResizeObserver(() => updateColumns())
+    ro = new ResizeObserver(() => rafUpdateColumns())
     if (containerRef.value) ro.observe(containerRef.value)
   } else {
     // Fallback
-    window.addEventListener('resize', updateColumns)
+    window.addEventListener('resize', rafUpdateColumns)
   }
 })
 onBeforeUnmount(() => {
   if (ro && containerRef.value) ro.unobserve(containerRef.value)
-  window.removeEventListener('resize', updateColumns)
+  window.removeEventListener('resize', rafUpdateColumns)
+  if (raf) cancelAnimationFrame(raf)
 })
 
 const columns = computed(() => {
@@ -61,47 +71,87 @@ function openProject(url) {
 <template>
 <div class="section" id="side-section">
     <h2>More from me...</h2>
-      <div class="small-card-container">
-        <div class="small-card-items" ref="containerRef">
-          <!-- render N columns left-to-right -->
-          <div class="small-card-column" v-for="(col, cidx) in columns" :key="cidx">
-            <div
-              class="small-card-item"
-              v-for="(proj, idx) in col"
-              :key="`${cidx}-${idx}`"
-              tabindex="0"
-              role="group"
-              @keydown.enter.prevent="openProject(proj.url)"
-            >
-              <img class="small-card-image" :src="proj.imageUrl" :alt="proj.title || `Project ${idx}`" />
-              <div class="small-card-body">
-                <p class="title">
-                    {{ proj.title }}
-                    <a
-                        v-if="proj.links"
-                        :href="proj.links"
-                        class="proj-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        @click.stop
-                    >
-                        <i class="mdi mdi-open-in-new"></i>
-                    </a>
-                </p>
-                <div class="content" v-for="(p, i) in proj.points" :key="i">
-                    {{ p }}
-                </div>
+    <div class="small-card-container">
+      <div class="small-card-items" ref="containerRef">
+        <!-- render N columns left-to-right -->
+        <div class="small-card-column" v-for="(col, cidx) in columns" :key="cidx">
+          <div
+            class="small-card-item"
+            v-for="(proj, idx) in col"
+            :key="`${cidx}-${idx}`"
+            tabindex="0"
+            role="group"
+            @keydown.enter.prevent="openProject(proj.url)"
+          >
+            <img class="small-card-image" :src="proj.imageUrl" :alt="proj.title || `Project ${idx}`" />
+            <div class="small-card-body">
+              <p class="title">
+                  {{ proj.title }}
+                  <a
+                      v-if="proj.links"
+                      :href="proj.links"
+                      class="proj-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      @click.stop
+                  >
+                      <i class="mdi mdi-open-in-new"></i>
+                  </a>
+              </p>
+              <div class="content" v-for="(p, i) in proj.points" :key="i">
+                  {{ p }}
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="small-card-endmsg">More projects coming soon!</div>
+    </div>
+    
 </div>
 </template>
 
 <style scoped>
 .small-card-container {
   position: relative;
+}
+
+.small-card-endmsg {
+  position: relative;
+  text-align: center;
+  margin-top: 24px;
+  font-size: 1.2rem;
+  color: #888;
+
+  font-weight: 600; /* Made slightly bolder so the shine is more visible */
+  
+  /* 1. Setup the gradient background */
+  background: linear-gradient(
+    to right, 
+    #888 20%, 
+    #fff 40%, 
+    #ffdf00 50%, /* A touch of gold/yellow, or use #fff for pure silver/white shine */
+    #fff 60%, 
+    #888 80%
+  );
+  background-size: 200% auto;
+  
+  /* 2. Clip the background to the text */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* 3. Animate the gradient movement */
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
 }
 
 .small-card-items {

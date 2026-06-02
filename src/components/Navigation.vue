@@ -22,7 +22,7 @@ const scrollTo = (sectionId) => {
 
 <template>
 <div class="section-nav">
-    <div class="title">Check these out!</div>
+    <div class="title">Explore more!</div>
     <div class="container">
         <div
             v-for="section in sectionId"
