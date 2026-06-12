@@ -37,7 +37,7 @@ for (const item of [...sideProjectData, ...publicationData, ...projectData, ...e
     });
   }
 }
-const skills = keywords.sort(() => Math.random() - 0.5).slice(0, 30);
+const skills = [...new Set(keywords)].sort(() => Math.random() - 0.5).slice(0, 30);
 
 function matchesQuery(item, expandedQueries) {
   if (!item.keywords) return false;
