@@ -29,7 +29,7 @@ const profileImages = computed(() => {
           here! I hope you have a delightful time exploring my workspace :D
       </div>
       <div class="contact-icons">
-          <a href="https://www.linkedin.com/in/peichi-huang-5033632b1/" target="_blank"><i class="mdi mdi-linkedin"></i></a> 
+          <a href="https://www.linkedin.com/in/peggy-huang/" target="_blank"><i class="mdi mdi-linkedin"></i></a> 
           <a href="https://github.com/Peggy1210" target="_blank"><i class="mdi mdi-github"></i></a>
           <a href="mailto:peichi@umich.edu"><i class="mdi mdi-email-outline"></i></a>
       </div>

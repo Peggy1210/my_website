@@ -65,7 +65,7 @@ onBeforeUnmount(() => {
 <div class="fab-wrapper" :class="{visible: fabVisible}" aria-hidden="false">
     <div class="fab-actions" :class="{expanded: fabExpanded}" role="menu" :aria-hidden="!fabExpanded">
     <a class="fab-action" href="mailto:peichi@umich.edu" @click="collapseFab" aria-label="Send email" role="menuitem"><i class="mdi mdi-email-outline"></i></a>
-    <a class="fab-action" href="https://www.linkedin.com/in/peichi-huang-5033632b1" target="_blank" rel="noopener" aria-label="LinkedIn" role="menuitem"><i class="mdi mdi-linkedin"></i></a>
+    <a class="fab-action" href="https://www.linkedin.com/in/peggy-huang/" target="_blank" rel="noopener" aria-label="LinkedIn" role="menuitem"><i class="mdi mdi-linkedin"></i></a>
     <a class="fab-action" href="https://github.com/Peggy1210" target="_blank" rel="noopener" aria-label="GitHub" role="menuitem"><i class="mdi mdi-github"></i></a>
     <a class="fab-action" :href="resumeUrl" download @click="collapseFab" aria-label="Download resume" role="menuitem"><i class="mdi mdi-file-pdf-box"></i></a>
     </div>

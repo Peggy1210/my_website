@@ -4,7 +4,7 @@
         <small>
             © 2025 PeiChi Huang · 
             <a href="/resume/Resume.pdf" download><i class="mdi mdi-file-pdf-box"></i></a>
-            <a href="https://www.linkedin.com/in/peichi-huang-5033632b1" target="_blank"><i class="mdi mdi-linkedin"></i></a> 
+            <a href="https://www.linkedin.com/in/peggy-huang/" target="_blank"><i class="mdi mdi-linkedin"></i></a> 
             <a href="https://github.com/Peggy1210" target="_blank"><i class="mdi mdi-github"></i></a>
             <a href="mailto:peichi@umich.edu"><i class="mdi mdi-email-outline"></i></a>
         </small>
