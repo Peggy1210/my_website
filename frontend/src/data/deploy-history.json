@@ -1,5 +1,11 @@
 [
     {
+        "date": "2026-06-21",
+        "content": [
+            "Update LinkedIn URL in Profile.vue, AppFooter.vue, and Fab.vue to reflect the new LinkedIn profile URL after a name change."
+        ]
+    },
+    {
         "date": "2026-06-12",
         "content": [
             "Added Google Analytics tracking code to index.html to monitor website traffic and user interactions.",
