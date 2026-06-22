@@ -3,7 +3,7 @@
         "date": "2026-06-21",
         "content": [
             "Update LinkedIn URL in Profile.vue, AppFooter.vue, and Fab.vue to reflect the new LinkedIn profile URL after a name change.",
-            "Fix deploy workflow to ensure that the correct frontend directory is targeted for installing dependencies and building the project."
+            "Fix deploy workflow to ensure that the correct frontend directory and dependencies are targeted for installing and building the project."
         ]
     },
     {
